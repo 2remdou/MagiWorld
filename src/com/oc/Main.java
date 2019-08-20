@@ -3,6 +3,7 @@ package com.oc;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+	    MagiWorld magiWorld = new MagiWorld();
+	    magiWorld.start();
     }
 }
