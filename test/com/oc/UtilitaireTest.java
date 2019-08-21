@@ -34,15 +34,17 @@ class UtilitaireTest {
     public void Given_mauvaisChoix_When_appellePoserQuestion_Then_appelleEncorePoserQuestion(){
         System.setIn(new ByteArrayInputStream("4\n2\n".getBytes()));
         String[] personnages = {"Guerrier","Rôdeur","Mage"};
-        Utilitaire.poserQuestion(personnages,"Veuillez choisir la classe de votre personnage");
+        int noPersonnage = Utilitaire.poserQuestion(personnages,"Veuillez choisir la classe de votre personnage");
         String[] output = outContent.toString().replace("\r\n", "\n").split("\n");
         assertEquals("Veuillez recommencez, la saisie est incorrecte",output[1]);
+        assertEquals(2,noPersonnage);
     }
     @Test
     public void Given_mauvaiseValeur_When_appelleGetIntInput_Then_afficheError(){
         System.setIn(new ByteArrayInputStream("15\n0\n".getBytes()));
-        Utilitaire.getIntInput(0,10);
+        int valeur = Utilitaire.getIntInput(0,10);
         String[] output = outContent.toString().replace("\r\n","\n").split("\n");
         assertEquals("Veuillez recommencez, la saisie est incorrecte",output[0]);
+        assertEquals(0,valeur);
     }
 }

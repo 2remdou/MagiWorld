@@ -58,7 +58,7 @@ public abstract class Personnage {
      */
     public String messagePresentation(){
         return this.nomJoueur+" niveau "+this.niveau+" je possède "+this.vie+" de vitalité, "+this.force+" de force, "+this.agilite+
-                " d'agilité et "+this.intelligence+ " d'intelligence";
+                " d'agilité et "+this.intelligence+ " d'intelligence !";
     }
 
     /**

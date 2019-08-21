@@ -1,6 +1,7 @@
 package com.oc;
 
 import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Utilitaire {
@@ -34,6 +35,7 @@ public class Utilitaire {
         boolean isNotValid = false;
         do {
             try {
+                if (!sc.hasNext()){sc = new Scanner(System.in);}
                 input = sc.nextInt();
                 isNotValid = (input<min || input>max);
             }catch (InputMismatchException e){
